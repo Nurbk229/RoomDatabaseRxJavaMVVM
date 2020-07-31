@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/genreFragment">
+
+    <fragment
+        android:id="@+id/genreFragment"
+        android:name="com.example.nurbk.ps.roomdatabaserxjavamvvm.view.GenreFragment"
+        android:label="GenreFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:popEnterAnim="@anim/slide_in_left"
+     >
+        <action
+            android:id="@+id/action_genreFragment_to_moviesFragment"
+            app:destination="@id/moviesFragment" />
+        <action
+            android:id="@+id/action_genreFragment_to_createGenreDialog"
+            app:destination="@id/createGenreDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.example.nurbk.ps.roomdatabaserxjavamvvm.view.MoviesFragment"
+        android:label="MoviesFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right">
+        <action
+            android:id="@+id/action_moviesFragment_to_createMovieDialog"
+            app:destination="@id/createMovieDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/createGenreDialog"
+        android:name="com.example.nurbk.ps.roomdatabaserxjavamvvm.view.CreateGenreDialog"
+        android:label="CreateGenreDialog"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <dialog
+        android:id="@+id/createMovieDialog"
+        android:name="com.example.nurbk.ps.roomdatabaserxjavamvvm.view.CreateMovieDialog"
+        android:label="CreateMovieDialog"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+</navigation>
